@@ -13,7 +13,7 @@ on:
   workflow_dispatch:
     inputs:
       name:
-        default: World
+        default: $NAME
         description: Who are you?
 
 jobs:
@@ -24,4 +24,4 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Welcome by name
-        run: echo Hello, ${{ inputs.name || $NAME }} !
+        run: echo Hello, ${{ inputs.name || "World" }} !
