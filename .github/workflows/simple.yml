@@ -1,4 +1,4 @@
-name: CI
+name: Simple Workflow
 
 on:
   push:
@@ -14,11 +14,11 @@ on:
         description: Who are you?
 
 jobs:
-  build:
+  greet:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
 
-      - name: Run a one-line script
+      - name: Welcome by name
         run: echo Hello, ${{inputs.name}}!
