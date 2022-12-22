@@ -1,5 +1,8 @@
 name: Simple Workflow
 
+env:
+  name: "foo"
+  
 on:
   push:
     branches: [ "main" ]
@@ -21,4 +24,4 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Welcome by name
-        run: echo Hello, ${{ inputs.name || 'America' }} !
+        run: echo Hello, ${{ inputs.name || name }} !
